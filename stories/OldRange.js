@@ -14,7 +14,7 @@ const cardStyle = {
   margin: '0 auto',
 };
 
-storiesOf('D3A/Organisms/Range', module)
+storiesOf('D3A/Organisms/Slider', module)
   .add(
     'Range',
     withInfo(`
@@ -24,7 +24,7 @@ storiesOf('D3A/Organisms/Range', module)
         <RangeComp
           min={0}
           max={24}
-          markerDistance={1}
+          markerDistance={5}
           unit="h"
           onBeforeChange={action('onBeforeChange')}
           onAfterChange={action('onAfterChange')}
@@ -40,11 +40,8 @@ storiesOf('D3A/Organisms/Range', module)
               min={0}
               max={24}
               markerDistance={1}
-              defaultValue={[4, 12]}
+              defaultValue={[6, 22]}
               unit="h"
-              name="Name"
-              minPercentVal="0"
-              maxPercentVal="100"
               onBeforeChange={action('onBeforeChange')}
               onAfterChange={action('onAfterChange')}
               onChange={action('onChange')}

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 
-import { ThemeProvider, Card, RangeComp } from '../lib';
+import { ThemeProvider, Card, SliderComp } from '../lib';
 
 const wrapperStyle = {
   padding: '15px',
@@ -14,37 +14,26 @@ const cardStyle = {
   margin: '0 auto',
 };
 
-storiesOf('D3A/Organisms/Range', module)
+
+storiesOf('D3A/Organisms/Slider', module)
   .add(
-    'Range',
+    'Slider',
     withInfo(`
-      Range from https://github.com/react-component/slider
+      Slider from https://github.com/react-component/slider
 
       ~~~js
-        <RangeComp
-          min={0}
-          max={24}
-          markerDistance={1}
-          unit="h"
-          onBeforeChange={action('onBeforeChange')}
-          onAfterChange={action('onAfterChange')}
-          onChange={action('onChange')}
-        />
+      <SliderComp />
       ~~~
 
     `)(() => (
       <ThemeProvider theme="d3a">
         <div className="base" style={wrapperStyle}>
           <Card style={cardStyle}>
-            <RangeComp
+            <SliderComp
               min={0}
-              max={24}
-              markerDistance={1}
-              defaultValue={[4, 12]}
-              unit="h"
-              name="Name"
-              minPercentVal="0"
-              maxPercentVal="100"
+              max={50}
+              markerDistance={5}
+              unit="kWh"
               onBeforeChange={action('onBeforeChange')}
               onAfterChange={action('onAfterChange')}
               onChange={action('onChange')}
