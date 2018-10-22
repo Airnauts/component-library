@@ -1,7 +1,41 @@
 @import '../../styles/themify';
 @import '../../styles/variables';
 
-.rc-slider {
+.SliderComp {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    /* color: $color-gray-light; */
+    transition: .15s linear;
+  }
+
+  &__bar {
+    position: relative;
+    height: 10px;
+    width: 250px;
+    border-radius: 1px;
+    background-color: rgba(red, .2);
+    cursor: pointer;
+
+    &-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 50px;
+      border-radius: 1px;
+      background-color: red;
+      cursor: ew-resize;
+    }
+  }
+}
+
+/* .rc-slider {
   position: relative;
   height: 40px;
   padding: 5px 0;
@@ -353,4 +387,4 @@
     -webkit-transform: scale(0, 0);
     transform: scale(0, 0);
   }
-}
+} */
