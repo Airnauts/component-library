@@ -70,6 +70,9 @@
       flex-grow: 1;
       display: flex;
       align-items: center;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
       cursor: pointer;
 
       @include themify($themes) {

@@ -26,6 +26,7 @@
       grid-column-gap: 18px;
       grid-row-gap: 20px;
       grid-template-columns: auto repeat(12, minmax(auto, 100px)) auto;
+      grid-template-rows: min-content;
       grid-template-areas:
       '. hd hd hd hd hd hd hd hd hd hd hd hd .'
       '. ct ct ct ct ct ct ct ct ct ct ct ct .'
