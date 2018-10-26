@@ -1,14 +1,30 @@
 @import '../../styles/themify';
 @import '../../styles/base';
 
-.header {
+.theme-d3a .header {
+  position: relative;
   @include themify($themes) {
-    border-bottom: themed('border');
     width: themed('header-width');
     height: themed('header-height');
     margin-bottom: themed('header-bottom');
   }
   display: flex;
   justify-content: space-between;
-  position: relative;
+  width: calc(100vw - 40px);
+  padding-bottom: 20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    display: block;
+    height: 1px;
+    width: calc(100% + 40px);
+    background-color: rgba(#fff, .1);
+  }
+
+  &-logo {
+    height: 30px;
+  }
 }

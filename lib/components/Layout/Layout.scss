@@ -20,7 +20,7 @@
     .wrapper {
       padding-top: 50px;
       @media all and (min-width: 600px) {
-        padding-top: 23px;
+        padding-top: 20px;
       }
       display: grid;
       grid-column-gap: 18px;
@@ -38,8 +38,11 @@
     grid-area: hd;
   }
 
-  .content {
+  .theme-d3a .content {
     grid-area: ct;
+    width: 100%;
+    max-width: 1398px;
+    margin: 0 auto;
   }
 
   .footer {
