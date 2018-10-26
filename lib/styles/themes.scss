@@ -8,7 +8,7 @@ $themes: (
     secondary: #35d7c6, // second highlight
 
     // Background colors
-    bgColor: radial-gradient(circle at bottom center, rgba(255,255,255,0.50) 53%, rgba(0,0,0,0.50) 100%),
+    bgColor: radial-gradient(circle at bottom center, rgba(255,255,255,0.50), rgba(0,0,0,0.50)),
     bgBase: #135671,
     cardBg: rgba(0, 0, 0, 0.06),
     darkBg: #043d53,

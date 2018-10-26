@@ -12,6 +12,7 @@
     background: themed('bgBase');
     background-image: themed('bgColor');
     background-blend-mode: multiply;
+    background-attachment: fixed;
     color: themed('textcolor');
     font-family: themed('fontFamily');
   }
