@@ -4,6 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { ThemeProvider, Button } from '../lib';
 import IconSolar from './img/icon_solar.svg';
+import IconPlus from './img/icon_plus.svg';
 
 const divStyle = {
   padding: '15px',
@@ -35,6 +36,39 @@ storiesOf('D3A/Atoms/Button', module)
           <Button
             label="reconfigure"
             type="secondary"
+            onClick={action('clicked')}
+          />
+        </div>
+      </ThemeProvider>
+    )),
+  )
+  .add(
+    'accent',
+    withInfo(`
+      <Button />
+    `)(() => (
+      <ThemeProvider theme="d3a">
+        <div className="base" style={divStyle}>
+          <Button
+            label="accent"
+            type="accent"
+            onClick={action('clicked')}
+          />
+        </div>
+      </ThemeProvider>
+    )),
+  )
+  .add(
+    'accent with icon',
+    withInfo(`
+      <Button />
+    `)(() => (
+      <ThemeProvider theme="d3a">
+        <div className="base" style={divStyle}>
+          <Button
+            label="New simulation"
+            type="accent"
+            icon={IconPlus}
             onClick={action('clicked')}
           />
         </div>

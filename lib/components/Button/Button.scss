@@ -5,15 +5,30 @@
   @include themify($themes) {
     color: themed('textcolor');
     font-family: themed('fontFamily');
-    font-weight: $thin-weight;
   }
-  display: inline-block;
-  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 11px 13px;
   border: 0;
   border-radius: 2px;
   cursor: pointer;
   transition: color .1s, background-color .1s;
   font-size: $small;
+
+  &__icon {
+    fill: $color-white;
+  }
+
+  &-icon {
+    padding: 6px 13px;
+
+    .button__label {
+      margin-right: 30px;
+    }
+  }
 
   &.settings {
     position: absolute;
@@ -99,7 +114,7 @@
 
   &--icon {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     @include themify($themes) {
       background-color: transparent;
@@ -123,6 +138,10 @@
       }
     }
 
+    .button__label {
+      margin-right: 0;
+    }
+
     &:active,
     &:hover {
       @include themify($themes) {
@@ -140,6 +159,10 @@
         text-decoration: underline;
       }
     }
+  }
+
+  &--accent {
+    background-color: $color-accent;
   }
 
   &--verbund {
