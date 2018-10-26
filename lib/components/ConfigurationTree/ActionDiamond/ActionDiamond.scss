@@ -1,6 +1,13 @@
 @import '../../../styles/themify';
 @import '../../../styles/variables';
 
+.node-diamond,
+.action-diamond {
+  transition:
+    all 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 .action-diamond {
   width: 56px;
   height: 56px;
@@ -8,14 +15,11 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: 
-    border 0.5s cubic-bezier(0.19, 1, 0.22, 1),
-    transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 
   &-wrapper {
     margin: 11px;
   }
-  
+
   &--unclicked {
     border-color: rgba(255, 255, 255, 0.098);
     border-style: solid;
@@ -26,12 +30,9 @@
       @include themify($themes) {
         border-color: themed('actionPrimary');
       }
-      transition: 
-        border 3s cubic-bezier(0.19, 1, 0.22, 1),
-        transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     }
   }
-  
+
   &--clicked {
     @include themify($themes) {
       background-color: themed('actionSecondary');
