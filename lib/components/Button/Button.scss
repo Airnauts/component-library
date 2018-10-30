@@ -11,11 +11,12 @@
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
+  height: 36px;
   padding: 11px 13px;
   border: 0;
   border-radius: 2px;
   cursor: pointer;
-  transition: color .1s, background-color .1s;
+  transition: color .1s, background-color .1s, box-shadow .1s;
   font-size: $small;
 
   &__icon {
@@ -157,6 +158,24 @@
 
       .button__label {
         text-decoration: underline;
+      }
+    }
+  }
+
+  &--icon-only {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    padding: 5px 0 0 0;
+
+    @include themify($themes) {
+      background-color: themed('white10');
+
+      &:hover {
+        background-color: themed('white10');
+        box-shadow: 0 4px 0px 1px themed('black10');
       }
     }
   }
