@@ -182,6 +182,10 @@
 
   &--accent {
     background-color: $color-accent;
+
+    &:hover {
+      background-color: lighten($color-accent, 10);
+    }
   }
 
   &--verbund {
