@@ -59,6 +59,23 @@ storiesOf('D3A/Atoms/Button', module)
     )),
   )
   .add(
+    'accent secondary',
+    withInfo(`
+      <Button />
+    `)(() => (
+      <ThemeProvider theme="d3a">
+        <div className="base" style={divStyle}>
+          <Button
+            type="icon"
+            icon={IconPlus}
+            iconOnly
+            onClick={action('clicked')}
+          />
+        </div>
+      </ThemeProvider>
+    )),
+  )
+  .add(
     'accent with icon',
     withInfo(`
       <Button />
