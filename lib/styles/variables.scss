@@ -1,6 +1,8 @@
 // Base Colors
 $color-white: white;
+$color-white--light: rgba(255, 255, 255, 0.10);
 $color-accent: #35D7C6;
+$color-blue--light: #8DAEBC;
 
 // Sizings
 $h1: 42px;
@@ -18,13 +20,16 @@ $bold-weight: 700;
 
 $default-lh: 1.625;
 
+// Typography
+$color-config-car-text: $color-blue--light;
+
 $color-house: #135671;
 $color-device: #3199c2;
 $color-celltower: #833755;
 $color-generator: #388574;
 
 $color-modal: rgba(#327D99, .2);
-$color-modal-divider-text: #8DAEBC;
+$color-modal-divider-text: $color-blue--light;
 $color-modal-divider: rgba($color-white, .1);
 
 /* VERBUND THEME */
