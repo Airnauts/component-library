@@ -5,10 +5,10 @@
   &-input-wrapper {
     position: relative;
 
-    input[type=number]::-webkit-inner-spin-button, 
-    input[type=number]::-webkit-outer-spin-button { 
-      -webkit-appearance: none; 
-      margin: 0; 
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
 
     &__input {
@@ -32,12 +32,12 @@
       &:focus {
         @include themify($themes) {
           background: themed('light');
-          color: themed('inputBg');
+          color: themed('bgBase');
         }
 
         + .input-field-input-wrapper__suffix .input-field-input-wrapper__unit {
           @include themify($themes) {
-            color: themed('inputBg');
+            color: themed('bgBase');
           }
         }
       }
