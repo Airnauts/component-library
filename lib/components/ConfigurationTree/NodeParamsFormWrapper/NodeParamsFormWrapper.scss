@@ -51,6 +51,10 @@
           fill: themed('actionPrimary');
         }
       }
+
+      &--inactive {
+        opacity: 0.5;
+      }
     }
   }
 
