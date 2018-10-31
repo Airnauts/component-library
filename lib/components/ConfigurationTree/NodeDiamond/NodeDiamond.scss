@@ -35,6 +35,22 @@
     }
   }
 
+  &__count {
+    position: absolute;
+    top: -38px;
+    right: 23px;
+    transform: rotate(-45deg);
+    height: 30px;
+    background: rgba(#fff, .2);
+    border-radius: 50%;
+    width: 30px;
+    text-align: center;
+    display: block;
+    line-height: 30px;
+    padding-right: 2px;
+    pointer-events: none;
+  }
+
   &__icon {
     display: flex;
     width: 40px;
