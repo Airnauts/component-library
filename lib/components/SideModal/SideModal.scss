@@ -7,7 +7,6 @@
   left: 100vw;
   z-index: 10;
   max-height: calc(100vh - 240px);
-  padding: 20px;
   transition: 0.2s;
   box-shadow: 5px 5px 0px 0px $box-shadow-color;
   overflow-y: scroll;
@@ -22,7 +21,11 @@
   }
 
   &__inner {
+    position: relative;
+    top: -20px;
     height: 100%;
+    padding: 20px;
+    margin-bottom: -20px;
   }
 
   &__close-button {
@@ -30,7 +33,8 @@
     width: 20px;
     height: 20px;
     top: 10px;
-    left: calc(100% - 10px);
+    left: calc(100% - 30px);
+    z-index: 1000;
     cursor: pointer;
 
     svg {
