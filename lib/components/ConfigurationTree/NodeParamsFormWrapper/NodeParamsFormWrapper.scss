@@ -54,6 +54,8 @@
 
       &--inactive {
         opacity: 0.5;
+        pointer: default;
+        pointer-events: none;
       }
     }
   }
