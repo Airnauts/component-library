@@ -40,8 +40,7 @@
 
   .theme-d3a .content {
     grid-area: ct;
-    width: 100%;
-    max-width: 1398px;
+    width: calc(100vw - 40px);
     margin: 0 auto;
   }
 
