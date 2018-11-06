@@ -20,8 +20,8 @@
       display: block;
       width: 100%;
       border: 0;
-      font-size: $medium;
-      padding: 10px 15px;
+      font-size: 16px;
+      padding: 9px 15px;
 
       &--error {
         @include themify($themes) {
