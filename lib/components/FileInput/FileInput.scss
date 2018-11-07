@@ -1,0 +1,13 @@
+.fileInput {
+  &__input {
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__fake-input {
+
+  }
+}
