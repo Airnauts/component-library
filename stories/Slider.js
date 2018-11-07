@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
@@ -14,6 +14,39 @@ const cardStyle = {
   margin: '0 auto',
 };
 
+class Container extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      value: 0
+    }
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange ({ value }) {
+    this.setState({
+      value
+    })
+  }
+
+  render () {
+    const { value } = this.state
+
+    return (
+      <SliderComp
+        minVal={0}
+        maxVal={24}
+        unit="h"
+        name="Slider"
+        value
+        markerStep={1}
+        labelStep={12}
+        onChange={this.handleChange}
+      />)
+  }
+}
 
 storiesOf('D3A/Organisms/Slider', module)
   .add(
@@ -29,15 +62,7 @@ storiesOf('D3A/Organisms/Slider', module)
       <ThemeProvider theme="d3a">
         <div className="base" style={wrapperStyle}>
           <Card style={cardStyle}>
-            <SliderComp
-              min={0}
-              max={50}
-              markerDistance={5}
-              unit="kWh"
-              onBeforeChange={action('onBeforeChange')}
-              onAfterChange={action('onAfterChange')}
-              onChange={action('onChange')}
-            />
+            <Container/>
           </Card>
         </div>
       </ThemeProvider>
