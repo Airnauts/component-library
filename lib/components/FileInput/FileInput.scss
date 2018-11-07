@@ -8,6 +8,7 @@
     height: 36px;
     background-color: $color-modal;
     pointer-events: none;
+    cursor: pointer;
   }
 
   &__input {
@@ -18,7 +19,6 @@
     height: 100%;
     appearance: none;
     opacity: 0;
-    cursor: pointer;
     pointer-events: auto;
   }
 
