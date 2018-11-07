@@ -3,6 +3,6 @@
     <path id="icon_download-a" d="M21,26 L26,26 L26,28 L14,28 L14,26 L19,26 L19,15.83 L15.41,19.41 L14,18 L20,12 L26,18 L24.58,19.42 L21,15.83 L21,26 Z"/>
   </defs>
   <g fill="none" fill-rule="evenodd" transform="translate(-14 -12)">
-    <use fill="#FFF" fill-rule="nonzero" xlink:href="#icon_download-a"/>
+    <use fill="" fill-rule="nonzero" xlink:href="#icon_download-a"/>
   </g>
 </svg>
