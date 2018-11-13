@@ -16,35 +16,35 @@ const cardStyle = {
 
 class Container extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      value: 0
-    }
+      value: 0,
+    };
 
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange ({ value }) {
+  handleChange({ value }) {
     this.setState({
-      value
-    })
+      value,
+    });
   }
 
-  render () {
-    const { value } = this.state
+  render() {
+    const { value } = this.state;
 
     return (
       <SliderComp
         minVal={0}
-        maxVal={24}
+        maxVal={100}
         unit="h"
-        name="Slider"
+        label="Risk"
         value
-        markerStep={1}
-        labelStep={12}
+        markerStep={5}
+        labelStep={50}
         onChange={this.handleChange}
-      />)
+      />);
   }
 }
 
@@ -62,7 +62,7 @@ storiesOf('D3A/Organisms/Slider', module)
       <ThemeProvider theme="d3a">
         <div className="base" style={wrapperStyle}>
           <Card style={cardStyle}>
-            <Container/>
+            <Container />
           </Card>
         </div>
       </ThemeProvider>
