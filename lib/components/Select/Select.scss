@@ -17,14 +17,14 @@
 
     svg {
       @include themify($themes) {
-        fill: themed('secondary');
+        fill: themed('actionPrimary');
       }
     }
   }
 
   &__select {
     @include themify($themes) {
-      color: themed('light');
+      color: themed('superLight');
     }
     display: block;
     width: 100%;

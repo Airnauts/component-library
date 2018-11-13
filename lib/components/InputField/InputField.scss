@@ -14,7 +14,7 @@
     &__input {
       @include themify($themes) {
         background: themed('inputBg');
-        color: themed('light');
+        color: themed('superLight');
       }
 
       display: block;
@@ -22,6 +22,7 @@
       border: 0;
       font-size: 16px;
       padding: 9px 15px;
+      transition: .15s;
 
       &--error {
         @include themify($themes) {
@@ -31,15 +32,15 @@
 
       &:focus {
         @include themify($themes) {
-          background: themed('light');
-          color: themed('bgBase');
+          color: themed('light');
         }
+        box-shadow: 4px 4px 0 0 rgba(0,0,0,0.10);
 
-        + .input-field-input-wrapper__suffix .input-field-input-wrapper__unit {
-          @include themify($themes) {
-            color: themed('bgBase');
-          }
-        }
+        // + .input-field-input-wrapper__suffix .input-field-input-wrapper__unit {
+        //   @include themify($themes) {
+        //     color: themed('bgBase');
+        //   }
+        // }
       }
     }
 
