@@ -6,7 +6,7 @@
   top: 50%;
   left: 100vw;
   z-index: 10;
-  max-height: calc(100vh - 60px);
+  max-height: calc(100vh - 116px);
   transition: 0.2s;
   box-shadow: 5px 5px 0px 0px $box-shadow-color;
   overflow-y: scroll;
@@ -19,7 +19,6 @@
   &--hidden {
     transform: translate(0, -50%);
   }
-
 
   &__inner {
     position: relative;
