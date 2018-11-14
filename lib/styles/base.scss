@@ -10,12 +10,12 @@
 %base {
   @include themify($themes) {
     background: themed('bgBase');
-    background-image: themed('bgColor');
-    background-blend-mode: multiply;
-    background-attachment: fixed;
+    background-color: themed('bgBaseNew');
     color: themed('textcolor');
     font-family: themed('fontFamily');
   }
+
+  background-color: #0C3647;
   overflow-x: hidden;
   line-height: $default-lh;
   font-size: $body;
