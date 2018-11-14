@@ -1,18 +1,24 @@
 @import '../../styles/themify';
+@import '../../styles/themes';
 @import '../../styles/base';
 
 .theme-d3a .header {
-  position: relative;
-  @include themify($themes) {
-    width: themed('header-width');
-    height: themed('header-height');
-    margin-bottom: themed('header-bottom');
-  }
+  position: fixed;
+  top: 0;
+  left: 20px;
+  // @include themify($themes) {
+  //   width: themed('header-width');
+  //   height: themed('header-height');
+  //   margin-bottom: themed('header-bottom');
+  //   background-color: themed('bgBaseNew');
+  // }
+  background-color: #0C3647;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: calc(100vw - 40px);
-  padding-bottom: 20px;
+  padding: 20px 0;
+  z-index: 100;
 
   &::before {
     content: '';
