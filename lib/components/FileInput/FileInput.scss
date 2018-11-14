@@ -1,14 +1,15 @@
+@import '../../styles/themify';
 @import '../../styles/variables';
 
 .fileInput {
-  padding-bottom: 20px;
-
   &__fake-input {
     position: relative;
     height: 36px;
-    background-color: $color-modal;
     pointer-events: none;
     cursor: pointer;
+    @include themify($themes) {
+      background: themed('inputBg');
+    }
   }
 
   &__input {
@@ -20,11 +21,15 @@
     appearance: none;
     opacity: 0;
     pointer-events: auto;
+    cursor: pointer;
   }
 
   &__file-name {
     display: inline-block;
     padding: 4px 0 0 15px;
+    @include themify($themes) {
+      color: themed('superLight');
+    }
   }
 
   &__icon {

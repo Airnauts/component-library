@@ -40,11 +40,12 @@
     top: -38px;
     right: 23px;
     transform: rotate(-45deg);
-    height: 30px;
-    background: rgba(#fff, .2);
+    height: 21px;
+    background-color: $color-badge;
     border-radius: 50%;
-    width: 30px;
+    width: 21px;
     text-align: center;
+    font-size: 10px;
     display: block;
     line-height: 30px;
     pointer-events: none;

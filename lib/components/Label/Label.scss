@@ -4,8 +4,8 @@
 .label {
   &__text {
     display: block;
-    margin-bottom: 8px;
     font-size: 14px;
+    line-height: 30px;
     @include themify($themes) {
       color: themed('label');
     }
