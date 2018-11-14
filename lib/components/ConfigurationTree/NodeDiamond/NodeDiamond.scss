@@ -33,20 +33,29 @@
         color: themed('nodeColor2');
       }
     }
+
+    &--color2 {
+      .node-diamond__count {
+        top: -17px;
+        left: 15px;
+      }
+    }
   }
 
   &__count {
     position: absolute;
-    top: -38px;
-    right: 23px;
+    top: -12px;
+    right: 27px;
     transform: rotate(-45deg);
-    height: 30px;
-    background: rgba(#fff, .2);
+    height: 21px;
+    color: #fff;
+    background-color: #BFAA4E;
     border-radius: 50%;
-    width: 30px;
+    width: 21px;
     text-align: center;
     display: block;
-    line-height: 30px;
+    font-size: 10px;
+    line-height: 21px;
     pointer-events: none;
   }
 
