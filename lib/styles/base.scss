@@ -16,7 +16,7 @@
     color: themed('textcolor');
     font-family: themed('fontFamily');
   }
-
+  overflow-x: hidden;
   line-height: $default-lh;
   font-size: $body;
   -webkit-font-smoothing: antialiased;
