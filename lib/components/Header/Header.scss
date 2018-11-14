@@ -6,12 +6,6 @@
   position: fixed;
   top: 0;
   left: 20px;
-  // @include themify($themes) {
-  //   width: themed('header-width');
-  //   height: themed('header-height');
-  //   margin-bottom: themed('header-bottom');
-  //   background-color: themed('bgBaseNew');
-  // }
   background-color: #0C3647;
   display: flex;
   justify-content: space-between;
