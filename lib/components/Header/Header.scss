@@ -25,6 +25,10 @@
     background-color: rgba(#fff, .1);
   }
 
+  &::after {
+    content: none !important;
+  }
+
   &-logo {
     height: 30px;
   }
