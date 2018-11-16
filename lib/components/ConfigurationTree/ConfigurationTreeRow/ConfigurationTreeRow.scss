@@ -1,4 +1,4 @@
-@import '../../styles/themify';
+@import '../../../styles/themify';
 
 .ct-wrapper {
   opacity: 1;
@@ -30,14 +30,15 @@
     flex: 1;
     display: flex;
     // justify-content: center;
-    overflow: hidden;
+    // overflow: hidden;
+    background-color: transparent;
   }
 
   &__row {
     display: flex;
     // justify-content: center;
     overflow: hidden;
-    transition: margin-left 0.5s ease, opacity 0.5s ease;
+    transition: margin-left 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease, margin-bottom 0.5s ease;
   }
 
   &__arrow {
