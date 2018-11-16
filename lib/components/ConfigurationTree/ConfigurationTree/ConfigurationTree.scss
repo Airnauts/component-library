@@ -1,0 +1,26 @@
+@import '../../../styles/themify';
+
+.ct-breadcrumbs {
+  &__container {
+    position: fixed;
+    display: flex;
+    top: 100px;
+    left: 20px;
+  }
+
+  &__element {
+    border: 1px solid rgba(255, 255, 255, 0.098);;
+    margin-right: 5px;
+    font-size: 16px;
+    text-decoration: none !important;
+    padding: 0 8px 0 8px;
+    @include themify($themes) {
+      color: themed('nodeColor1');
+      background-color: themed('nodeColor1Inactive');
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
