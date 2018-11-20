@@ -32,13 +32,14 @@
     // justify-content: center;
     overflow: hidden;
     background-color: transparent;
+    transition: margin-top 0.5s ease, margin-bottom 0.5s ease;
   }
 
   &__row {
     display: flex;
     // justify-content: center;
     overflow: hidden;
-    transition: margin-left 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease, margin-bottom 0.5s ease;
+    transition: margin-left 0.5s ease, opacity 0.5s ease;
   }
 
   &__arrow {

@@ -82,7 +82,6 @@
     "react-dom": "^16.3.2",
     "react-inlinesvg": "^0.8.1",
     "react-router-dom": "^4.2.2",
-    "react-scrollchor": "^6.0.0",
     "react-slider": "^0.11.2",
     "react-sliding-pane": "^2.0.2",
     "react-test-renderer": "^16.4.0",
