@@ -41,4 +41,20 @@
     width: 10px;
     fill: $color-device;
   }
+
+  &__error-msg {
+    font-size: $medium;
+    line-height: 30px;
+    @include themify($themes) {
+      color: themed('errorLight');
+    }
+  }
+
+  &--invalid {
+    .label__text {
+      @include themify($themes) {
+        color: themed('errorLight');
+      }
+    }
+  }
 }
