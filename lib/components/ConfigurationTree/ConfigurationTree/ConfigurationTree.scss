@@ -9,17 +9,33 @@
   }
 
   &__element {
-    border: 1px solid rgba(255, 255, 255, 0.098);;
     margin-right: 5px;
-    font-size: 16px;
-    padding: 4px 8px 4px 8px;
+    font-size: 15px;
+    padding: 4px 10px 4px 10px;
+    border-style: none;
+    border-radius: 2px;
+    background-color: rgba(#fff, .1);
+    cursor: pointer;
     @include themify($themes) {
       color: themed('nodeColor1');
-      background-color: themed('nodeColor1Inactive');
     }
 
     &:hover {
+      border: 1px solid rgba(#fff, .1);
+      padding: 3px 9px 3px 9px;
       background-color: transparent;
+    }
+
+    &--active {
+      @include themify($themes) {
+        background-color: themed('nodeColor1Active');
+      }
+
+      &:hover {
+        border: 1px solid rgba(#fff, .1);
+        padding: 3px 9px 3px 9px;
+        background-color: transparent;
+      }
     }
   }
 }
