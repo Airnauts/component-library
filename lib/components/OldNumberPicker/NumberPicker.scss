@@ -1,0 +1,184 @@
+@import '../../styles/themify';
+@import '../../styles/variables';
+
+.numberPicker {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.rc-input-number {
+  display: flex;
+  position: relative;
+  background: transparent;
+
+  &-disabled {
+    opacity: 0.75;
+  }
+
+  .rc-input-number-handler {
+    display: flex;
+    flex: 0 0 20%;
+    border: 0;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+.numberPicker--medium {
+  .rc-input-number-input {
+    font-size: $h3;
+  }
+
+  .rc-input-number {
+    .rc-input-number-handler {
+      height: 30px;
+    }
+  }
+
+  .rc-input-number-handler-up-inner,
+  .rc-input-number-handler-down-inner {
+    width: 30px;
+    height: 30px;
+
+    &::after {
+      font-size: $h3;
+    }
+  }
+}
+
+.numberPicker--inactive {
+  .rc-input-number {
+    .rc-input-number-handler {
+      display: none;
+    }
+  }
+
+  .rc-input-number-input-wrap {
+    @include themify($themes) {
+      color: themed('title');
+    }
+    margin-left: -5px;
+
+    &::after {
+      content: 'x';
+      display: block;
+      font-size: $h3;
+      line-height: 26px;
+      margin-left: -30%;
+    }
+  }
+}
+
+.rc-input-number-handler-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.rc-input-number-handler-up {
+  order: 2;
+}
+
+.rc-input-number-handler-down {
+  order: 1;
+}
+
+.rc-input-number-input-wrap {
+  @include themify($themes) {
+    color: themed('textcolor');
+  }
+  display: flex;
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: transparent;
+
+  .has-input-label & {
+    margin-top: -0.5rem;
+  }
+}
+
+.rc-input-number-input {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: $medium;
+  color: inherit;
+  text-align: center;
+  outline: none;
+  font-weight: $light-weight;
+  @include themify($themes) {
+    font-family: themed('fontFamily');
+  }
+}
+
+.rc-input-number-handler-up-inner,
+.rc-input-number-handler-down-inner {
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  @include themify($themes) {
+    border: solid 1px themed('secondary');
+  }
+
+  &::after {
+    position: absolute;
+    top: 46%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Tahoma, Geneva, sans-serif;
+    @include themify($themes) {
+      color: themed('secondary');
+    }
+  }
+
+  &:hover {
+    @include themify($themes) {
+      border: solid 1px themed('primary');
+      box-shadow: themed('formShadow');
+    }
+
+    &::after {
+      @include themify($themes) {
+        color: themed('primary');
+      }
+    }
+  }
+}
+
+.rc-input-number-handler-up-inner {
+  &::after {
+    content: '+';
+  }
+}
+
+.rc-input-number-handler-down-inner {
+  &::after {
+    content: '-';
+  }
+}
+
+.numberPicker_label {
+  @include themify($themes) {
+    color: themed('title');
+  }
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  line-height: 1;
+  font-size: $medium;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+}
