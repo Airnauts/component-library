@@ -84,10 +84,13 @@
     top: 50%;
     left: calc(100% - 2px);
     height: 16px;
-    width: 5px;
+    width: 6px;
     margin-top: -8px;
     background-color: #3199C2;
     cursor: ew-resize;
-    opacity: .1;
+
+    &--first {
+      left: 0;
+    }
   }
 }

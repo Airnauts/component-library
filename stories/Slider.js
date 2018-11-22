@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { action } from '@storybook/addon-actions';
 
 import { ThemeProvider, Card, SliderComp } from '../lib';
 
@@ -36,13 +35,14 @@ class Container extends Component {
 
     return (
       <SliderComp
-        minVal={0}
-        maxVal={24}
+        minVal={50}
+        maxVal={150}
         unit="h"
         label="Risk"
         value={value}
-        markerStep={2}
-        labelStep={6}
+        offsetLeft={20}
+        markerStep={5}
+        labelStep={4}
         onChange={this.handleChange}
       />);
   }
