@@ -17,7 +17,6 @@
     width: 100%;
     font-size: 13px;
     background-color: rgba(#fff, .1);
-    transition: .15s linear;
   }
 
   &__percentage {
@@ -90,7 +89,7 @@
     cursor: ew-resize;
 
     &--first {
-      left: 0;
+      left: -2px;
     }
   }
 }

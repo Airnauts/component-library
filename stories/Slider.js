@@ -18,7 +18,7 @@ class Container extends Component {
     super(props);
 
     this.state = {
-      value: 0,
+      value: [10, 30],
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -35,12 +35,11 @@ class Container extends Component {
 
     return (
       <SliderComp
-        minVal={50}
-        maxVal={150}
+        minVal={0}
+        maxVal={100}
         unit="h"
         label="Risk"
         value={value}
-        offsetLeft={20}
         markerStep={5}
         labelStep={4}
         onChange={this.handleChange}
