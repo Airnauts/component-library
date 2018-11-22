@@ -16,7 +16,7 @@
     align-items: center;
     width: 100%;
     font-size: 13px;
-    background-color: rgba(#fff, .1);
+    background-color: #315563;
   }
 
   &__label {
@@ -65,7 +65,8 @@
       }
 
       &--accent::before {
-        height: 10px;
+        top: -4px;
+        height: 14px;
       }
     }
   }
