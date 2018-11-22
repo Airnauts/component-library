@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { action } from '@storybook/addon-actions';
 
 import { ThemeProvider, Card, SliderComp } from '../lib';
 
@@ -19,32 +18,48 @@ class Container extends Component {
     super(props);
 
     this.state = {
-      value: 0,
+      range: [10, 30],
+      slider: 40,
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange({ value }) {
+  handleChange({ value, name }) {
     this.setState({
-      value,
+      [name]: value,
     });
   }
 
   render() {
-    const { value } = this.state;
+    const { slider, range } = this.state;
 
     return (
-      <SliderComp
-        minVal={0}
-        maxVal={100}
-        unit="h"
-        label="Risk"
-        value
-        markerStep={5}
-        labelStep={50}
-        onChange={this.handleChange}
-      />);
+      <React.Fragment>
+        <SliderComp
+          minVal={0}
+          maxVal={100}
+          unit="h"
+          label="Hours per day"
+          value={range}
+          name="range"
+          markerStep={5}
+          labelStep={4}
+          onChange={this.handleChange}
+        />
+        <SliderComp
+          minVal={0}
+          maxVal={100}
+          name="slider"
+          unit="%"
+          label="Risk"
+          value={slider}
+          markerStep={5}
+          labelStep={4}
+          onChange={this.handleChange}
+        />
+      </React.Fragment>
+    );
   }
 }
 
