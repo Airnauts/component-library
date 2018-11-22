@@ -37,12 +37,12 @@ class Container extends Component {
     return (
       <SliderComp
         minVal={0}
-        maxVal={100}
+        maxVal={24}
         unit="h"
         label="Risk"
-        value
-        markerStep={5}
-        labelStep={50}
+        value={value}
+        markerStep={2}
+        labelStep={6}
         onChange={this.handleChange}
       />);
   }
