@@ -4,11 +4,23 @@
 .fileInput {
   &__fake-input {
     position: relative;
+    display: flex;
+    justify-content: space-between;
     height: 36px;
     pointer-events: none;
     cursor: pointer;
     @include themify($themes) {
       background: themed('inputBg');
+    }
+
+    &__icons {
+      display: flex;
+      padding-right: 15px;
+
+      .input-field-input-wrapper__error-icon {
+        position: relative;
+        top: 8px;
+      }
     }
   }
 
@@ -33,10 +45,6 @@
   }
 
   &__icon {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
     height: 100%;
     width: 10px;
     fill: $color-device;
