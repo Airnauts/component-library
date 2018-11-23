@@ -169,7 +169,9 @@
     height: 36px;
     width: 36px;
     padding: 5px 0 0 0;
+  }
 
+  &--ghost {
     @include themify($themes) {
       background-color: themed('white10');
 
