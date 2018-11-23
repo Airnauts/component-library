@@ -2,9 +2,7 @@
 @import '../../styles/variables';
 
 .SliderComp {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  width: 100%;
   padding-bottom: 20px;
   margin-left: auto;
   user-select: none;
@@ -64,9 +62,28 @@
         background-color: rgba(#fff, .1);
       }
 
-      &--accent::before {
-        top: -4px;
-        height: 14px;
+      &--accent {
+        &:first-of-type::before {
+          left: 0;
+          transform: none;
+        }
+
+        &:last-of-type::before {
+          right: 0;
+          left: unset;
+          transform: none;
+        }
+
+        &:last-of-type span {
+          position: absolute;
+          top: calc(100% - 16px);
+          right: 0;
+        }
+
+        &::before {
+          top: -4px;
+          height: 14px;
+        }
       }
     }
   }
@@ -82,7 +99,7 @@
   &__pole {
     position: absolute;
     top: 50%;
-    left: calc(100% - 2px);
+    left: calc(100% - 5px);
     height: 16px;
     width: 6px;
     margin-top: -8px;
@@ -90,7 +107,7 @@
     cursor: ew-resize;
 
     &--first {
-      left: -2px;
+      left: -1px;
     }
   }
 }
