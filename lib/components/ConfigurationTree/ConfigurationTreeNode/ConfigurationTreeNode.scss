@@ -79,6 +79,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     color: currentColor;
+    user-select: none;
   }
 
   &-footer {
