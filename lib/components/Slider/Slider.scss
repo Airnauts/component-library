@@ -109,5 +109,10 @@
     &--first {
       left: -1px;
     }
+
+    &--hidden {
+      opacity: 0;
+      cursor: default;
+    }
   }
 }
