@@ -14,6 +14,7 @@
   border-width: 2px;
   transform: rotate(45deg);
   background-color: rgba($color-white, .1);
+  user-select: none;
 
   &-wrapper {
     margin: 11px;
