@@ -75,7 +75,7 @@ storiesOf('D3A/ConfigurationTree', module)
       <ThemeProvider theme="d3a">
         <div className="base" style={wrapperStyle}>
           <div style={rowStyle}>
-            <NodeDiamond type="Area" />
+            <NodeDiamond type="Area" childrenCount={5} count={2} />
             <NodeDiamond type="CellTower" />
             <NodeDiamond type="FiniteDieselGenerator" />
             <NodeDiamond type="InfiniteDieselGenerator" />
