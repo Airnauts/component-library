@@ -1,0 +1,106 @@
+@import '../../styles/themify';
+@import '../../styles/variables';
+
+.InputSwitcher {
+  max-width: 280px;
+  margin: 0 auto;
+
+  &__inner {
+    position: relative;
+    z-index: 0;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 18px;
+    user-select: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 3px;
+      transform: translateY(-50%);
+      width: 50%;
+      height: calc(100% - 4px);
+      border-radius: 18px;
+      background-color: #327d9933;
+      z-index: -1;
+      animation: stretchInverse .3s ease-out forwards;
+      transition: .3s;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    width: 50%;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    transition: .1s;
+
+    &--off {
+      color: #3199C2;
+    }
+  }
+
+  input:checked + div {
+    .InputSwitcher__button--on {
+      color: #3199C2;
+      transition-delay: .35s;
+    }
+
+    .InputSwitcher__button--off {
+      color: #fff;
+      transition-delay: .35s;
+    }
+
+    &::before {
+      animation: stretch .3s ease-out forwards;
+      left: 3px;
+    }
+  }
+}
+
+@keyframes stretch {
+  0% {
+    width: 50%;
+  }
+
+  40% {
+    width: calc(100% - 6px);
+  }
+
+  60% {
+    width: 50%;
+  }
+
+  100% {
+    left: unset;
+    right: 3px;
+    width: 50%;
+  }
+}
+
+@keyframes stretchInverse {
+  0% {
+    left: unset;
+    right: 3px;
+    width: 50%;
+  }
+
+  40% {
+    width: calc(100% - 6px);
+  }
+
+  60% {
+    width: 50%;
+  }
+
+  100% {
+    left: 3px;
+    right: unset;
+    width: 50%;
+  }
+}
