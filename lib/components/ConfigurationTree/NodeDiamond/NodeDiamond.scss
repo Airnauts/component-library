@@ -60,6 +60,23 @@
     pointer-events: none;
   }
 
+  &__children-count {
+    position: absolute;
+    top: 26px;
+    right: -11px;
+    transform: rotate(-45deg);
+    height: 21px;
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+    width: 21px;
+    text-align: center;
+    display: block;
+    font-size: 10px;
+    line-height: 21px;
+    pointer-events: none;
+  }
+
   &__icon {
     display: flex;
     width: 40px;
