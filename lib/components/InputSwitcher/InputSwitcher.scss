@@ -26,7 +26,6 @@
       background-color: #327d9933;
       z-index: -1;
       animation: stretchInverse .3s ease-out forwards;
-      transition: .3s;
     }
   }
 
@@ -46,15 +45,27 @@
     }
   }
 
+  &__childrens {
+    .input-field:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    .input-field:first-child {
+      margin-top: 20px;
+    }
+
+    .nativeSelect__wrapper {
+      margin-bottom: 10px;
+    }
+  }
+
   input:checked + div {
     .InputSwitcher__button--on {
       color: #3199C2;
-      transition-delay: .35s;
     }
 
     .InputSwitcher__button--off {
       color: #fff;
-      transition-delay: .35s;
     }
 
     &::before {

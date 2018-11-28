@@ -10,7 +10,6 @@
   transition: 0.2s;
   box-shadow: 5px 5px 0px 0px $box-shadow-color;
   overflow-y: scroll;
-  // background: linear-gradient(-180deg, #0A2C3A 4%, #0D384A 100%);
 
   &--visible {
     transform: translate(calc(-100% - 20px), -50%);
@@ -24,7 +23,7 @@
     position: relative;
     top: -20px;
     height: 100%;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     margin-bottom: -20px;
     background-color: #0C3647;
     user-select: none;
@@ -39,6 +38,10 @@
       background-color: rgba(255, 255, 255, 0.05);
       pointer-events: none;
     }
+  }
+
+  &__childrens {
+    padding-bottom: 86px;
   }
 
   &__close-button {
