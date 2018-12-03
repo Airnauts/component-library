@@ -43,6 +43,10 @@
       @include themify($themes) {
         color: themed('error');
       }
+
+      &:first-of-type {
+        margin-top: -20px;
+      }
     }
 
     &__buttons-container {
