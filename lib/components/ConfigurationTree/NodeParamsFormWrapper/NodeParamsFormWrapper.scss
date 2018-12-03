@@ -32,9 +32,22 @@
       border-color: themed('inputBg');
     }
     border-width: 1px 0px 0px 0px;
+    margin-top: 10px;
     padding-top: 20px;
     display: flex;
+    flex-direction: column;
     background-color: #1c4250;
+
+    &__error-msg {
+      margin-bottom: 5px;
+      @include themify($themes) {
+        color: themed('error');
+      }
+    }
+
+    &__buttons-container {
+      display: flex;
+    }
 
     &__save-button {
       height: 36px;
