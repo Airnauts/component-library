@@ -74,7 +74,6 @@
 
   &__error-msg {
     font-size: $medium;
-    line-height: 30px;
     @include themify($themes) {
       color: themed('errorLight');
     }

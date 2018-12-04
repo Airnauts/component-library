@@ -115,4 +115,11 @@
       cursor: default;
     }
   }
+
+  &__error-msg {
+    font-size: $medium;
+    @include themify($themes) {
+      color: themed('errorLight');
+    }
+  }
 }
