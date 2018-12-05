@@ -40,6 +40,8 @@
 
     &__error-msg {
       margin-bottom: 5px;
+      line-height: normal;
+      font-size: 14px;
       @include themify($themes) {
         color: themed('error');
       }
