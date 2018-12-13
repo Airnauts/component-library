@@ -1,0 +1,43 @@
+@import '../../../styles/themify';
+
+.ct-breadcrumbs {
+  &__container {
+    position: fixed;
+    display: flex;
+    top: 100px;
+    left: 20px;
+    z-index: 10001;
+    user-select: none;
+  }
+
+  &__element {
+    margin-right: 5px;
+    font-size: 15px;
+    padding: 4px 10px 4px 10px;
+    border-style: none;
+    border-radius: 2px;
+    background-color: rgba(#fff, .1);
+    cursor: pointer;
+    @include themify($themes) {
+      color: themed('nodeColor1');
+    }
+
+    &:hover {
+      border: 1px solid rgba(#fff, .1);
+      padding: 3px 9px 3px 9px;
+      background-color: transparent;
+    }
+
+    &--active {
+      @include themify($themes) {
+        background-color: themed('nodeColor1Active');
+      }
+
+      &:hover {
+        border: 1px solid rgba(#fff, .1);
+        padding: 3px 9px 3px 9px;
+        background-color: transparent;
+      }
+    }
+  }
+}

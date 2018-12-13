@@ -1,0 +1,356 @@
+@import '../../styles/themify';
+@import '../../styles/variables';
+
+.rc-slider {
+  position: relative;
+  height: 40px;
+  padding: 5px 0;
+  width: 100%;
+  touch-action: none;
+
+  &-rail {
+    @include themify($themes) {
+      background-color: themed('line');
+    }
+    position: absolute;
+    width: 100%;
+    height: 4px;
+
+    &::before,
+    &::after {
+      @include themify($themes) {
+        background-color: themed('light');
+      }
+      display: block;
+      content: '';
+      height: 14px;
+      width: 2px;
+      position: absolute;
+      top: -5px;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  &-track {
+    @include themify($themes) {
+      background-color: themed('secondary');
+    }
+    position: absolute;
+    left: 0;
+    height: 4px;
+  }
+
+  &-handle {
+    @include themify($themes) {
+      background-color: themed('secondary');
+    }
+    position: absolute;
+    margin-top: -5px;
+    width: 2px;
+    height: 14px;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+      @include themify($themes) {
+        background-color: themed('primary');
+        box-shadow: themed('formSadow');
+      }
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-mark {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    font-size: 12px;
+
+    &-text {
+      @include themify($themes) {
+        color: themed('title');
+      }
+      position: absolute;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .marker {
+      font-style: normal;
+    }
+  }
+}
+
+.rc-slider-step {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+}
+
+.rc-slider-dot {
+  @include themify($themes) {
+    background-color: themed('line');
+  }
+  bottom: -14px;
+  position: absolute;
+  margin-left: -1px;
+  width: 1px;
+  height: 5px;
+  cursor: pointer;
+  vertical-align: top;
+
+  &:first-child,
+  &:last-child {
+    bottom: -18px;
+    height: 10px;
+  }
+}
+
+.rc-slider-dot-active {
+  @include themify($themes) {
+    background-color: themed('line');
+  }
+}
+
+.rc-slider-disabled {
+  @include themify($themes) {
+    background-color: themed('line');
+  }
+
+  .rc-slider-track {
+    @include themify($themes) {
+      background-color: themed('white');
+   }
+ }
+
+  .rc-slider-handle,
+  .rc-slider-dot {
+    @include themify($themes) {
+      background-color: themed('white');
+      border-color: themed('line');
+    }
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
+
+.rc-slider-vertical {
+  width: 14px;
+  height: 100%;
+  padding: 0 5px;
+
+  .rc-slider-rail {
+    height: 100%;
+    width: 4px;
+  }
+
+  .rc-slider-track {
+    left: 5px;
+    bottom: 0;
+    width: 4px;
+  }
+
+  .rc-slider-handle {
+    margin-left: -5px;
+    margin-bottom: -7px;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+  }
+
+  .rc-slider-mark {
+    top: 0;
+    left: 18px;
+    height: 100%;
+  }
+
+  .rc-slider-step {
+    height: 100%;
+    width: 4px;
+  }
+
+  .rc-slider-dot {
+    left: 2px;
+    margin-bottom: -4px;
+  }
+}
+
+.rc-slider-tooltip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: visible;
+}
+
+.rc-slider-tooltip-hidden {
+  display: none;
+}
+
+.rc-slider-tooltip-placement-top {
+  padding: 4px 0 8px;
+
+  .rc-slider-tooltip-arrow {
+    border-top-color: #3a657f;
+    bottom: 4px;
+    left: 50%;
+    margin-left: -4px;
+    border-width: 4px 4px 0;
+  }
+}
+
+// the tooltip markup is placed outside of the theme wrapper - therefore colors have to be hardcoded
+
+.rc-slider-tooltip-inner {
+  background-color: #3a657f;
+  color: #fff;
+  padding: 6px 2px;
+  min-width: 24px;
+  height: 24px;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.rc-slider-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.rc-slider-tooltip-zoom-down-enter,
+.rc-slider-tooltip-zoom-down-appear {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  display: block;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.rc-slider-tooltip-zoom-down-leave {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  display: block !important;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.rc-slider-tooltip-zoom-down-enter.rc-slider-tooltip-zoom-down-enter-active,
+.rc-slider-tooltip-zoom-down-appear.rc-slider-tooltip-zoom-down-appear-active {
+  -webkit-animation-name: rcSliderTooltipZoomDownIn;
+  animation-name: rcSliderTooltipZoomDownIn;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
+.rc-slider-tooltip-zoom-down-leave.rc-slider-tooltip-zoom-down-leave-active {
+  -webkit-animation-name: rcSliderTooltipZoomDownOut;
+  animation-name: rcSliderTooltipZoomDownOut;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
+.rc-slider-tooltip-zoom-down-enter,
+.rc-slider-tooltip-zoom-down-appear {
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.rc-slider-tooltip-zoom-down-leave {
+  -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+
+@-webkit-keyframes rcSliderTooltipZoomDownIn {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+
+  100% {
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes rcSliderTooltipZoomDownIn {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+
+  100% {
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+
+@-webkit-keyframes rcSliderTooltipZoomDownOut {
+  0% {
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+}
+@keyframes rcSliderTooltipZoomDownOut {
+  0% {
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+}

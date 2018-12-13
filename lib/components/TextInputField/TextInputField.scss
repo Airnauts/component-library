@@ -3,31 +3,36 @@
 
 .textInput {
   &__input {
-    @include themify($themes) {
-      background: themed('formElement');
-      color: themed('light');
-    }
     display: block;
     width: 100%;
     border: 0;
-    font-size: $small;
+    font-size: 16px;
     padding: 5px 15px;
+    @include themify($themes) {
+      background: themed('inputBg');
+      color: themed('superLight');
+    }
+    transition: .15s;
 
     &:disabled {
       background: none;
       text-transform: uppercase;
     }
 
-    &::placeholder {
+    &--error {
       @include themify($themes) {
-        color: themed('textSubColor');
+        // color: themed('error') !important;
       }
     }
 
-    &:focus,
-    &:hover {
+    &:focus {
+      color: #fff;
+      box-shadow: 4px 4px 0 0 rgba(0,0,0,0.10);
+    }
+
+    &::placeholder {
       @include themify($themes) {
-        box-shadow: themed('formShadow');
+        color: themed('textSubColor');
       }
     }
   }

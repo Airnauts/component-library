@@ -8,15 +8,24 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 15px;
+    padding-bottom: 10px;
     @include themify($themes) {
-      border-bottom: themed('formBorder');
+      border-bottom: 1px solid themed('white10');
     }
 
-    &:hover {
-      @include themify($themes) {
-        background-color: themed('cardBg');
-      }
+    &:not(:first-of-type) {
+      margin-top: 26px;
     }
+  }
+
+  &__entry {
+    font-size: 18px;
+    @include themify($themes) {
+      color: themed('textSubColor');
+    }
+  }
+
+  .nav button {
+    margin-left: 10px;
   }
 }

@@ -6,6 +6,7 @@
       grid-column-gap: 18px;
       grid-row-gap: 20px;
       grid-template-columns: repeat(12, minmax(auto, 100px));
+      grid-auto-rows: min-content;
       grid-template-areas:
       '. . . hero hero hero hero hero hero . . .'
       'int int int int int int int int int int int int'
@@ -23,5 +24,9 @@
     .configurations {
       grid-area: confs;
     }
+
+    // .headline-title {
+    //   padding-bottom: 25px;
+    // }
   }
 }

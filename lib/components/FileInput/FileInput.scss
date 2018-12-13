@@ -1,0 +1,68 @@
+@import '../../styles/themify';
+@import '../../styles/variables';
+
+.fileInput {
+  &__fake-input {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 36px;
+    pointer-events: none;
+    cursor: pointer;
+    @include themify($themes) {
+      background: themed('inputBg');
+    }
+
+    &__icons {
+      display: flex;
+      padding-right: 15px;
+
+      .input-field-input-wrapper__error-icon {
+        position: relative;
+        top: 8px;
+      }
+    }
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    opacity: 0;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  &__file-name {
+    display: inline-block;
+    padding: 4px 0 0 15px;
+    @include themify($themes) {
+      color: themed('superLight');
+    }
+  }
+
+  &__icon {
+    height: 100%;
+    width: 10px;
+    fill: $color-device;
+  }
+
+  &__error-msg {
+    font-size: $medium;
+    line-height: 30px;
+    @include themify($themes) {
+      color: themed('errorLight');
+    }
+  }
+
+  &--invalid {
+    .label__text {
+      @include themify($themes) {
+        color: themed('errorLight');
+      }
+    }
+  }
+}

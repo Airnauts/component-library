@@ -1,0 +1,145 @@
+@import '../../../styles/themify';
+
+.ct-wrapper {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  &--hidden {
+    opacity: 0;
+  }
+}
+
+.ct {
+  display: flex;
+  // width: 100%;
+  justify-content: center;
+  // border-left: solid 1px yellow;
+  // border-right: solid 1px yellow;
+  position: relative;
+  transform: translateX(0);
+
+  &__breadcrumbs {
+    position: relative;
+    justify-content: center;
+    display: none;
+    &--visible {
+      display: flex;
+    }
+  }
+
+  &__container {
+    flex: 1;
+    display: flex;
+    // justify-content: center;
+    overflow: hidden;
+    background-color: transparent;
+    transition: margin-top 0.5s ease, margin-bottom 0.5s ease;
+  }
+
+  &__row {
+    display: flex;
+    // justify-content: center;
+    overflow: hidden;
+    transition: margin-left 0.5s ease, opacity 0.5s ease;
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: flex-end;
+    left: -16px;
+    position: absolute;
+    padding-top: 72px; // TODO computed?
+    cursor: pointer;
+    svg {
+      fill: #fff;
+      width: 16px;
+    }
+    &--right {
+      justify-content: flex-start;
+      right: -16px;
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    background-color: #BFAA4E;
+    border-radius: 100%;
+    font-size: 10px;
+    line-height: 21px;
+    width: 21px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 40px;
+    left: calc(50% - 10.5px);
+  }
+
+  &__node {
+    // background-color: red;
+    text-align: center;
+    transition: margin-left 0.5s ease;
+  }
+}
+
+.ct-transition-in-progress {
+  > .ct-fade-children-enter {
+    height: 0px !important;
+    max-height: 0px;
+    margin: 0px !important;
+    position: absolute !important;
+  }
+}
+
+// main fade transition
+.ct-fade-enter {
+  opacity: 0.01;
+}
+.ct-fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.ct-fade-exit {
+  opacity: 1;
+}
+.ct-fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 250ms ease-in;
+}
+
+.ct-fade-appear {
+    opacity: 0.01;
+}
+
+.ct-fade-appear.ct-fade-appear-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+// child nodes fade transition
+.ct-fade-children-enter {
+  opacity: 0.01;
+}
+.ct-fade-children-enter-active {
+  opacity: 1;
+  transition: opacity 150ms ease-in;
+  transition-delay: 150ms;
+}
+.ct-fade-children-exit {
+  opacity: 1;
+}
+.ct-fade-children-exit-active {
+  opacity: 0.01;
+  transition: opacity 150ms ease-in;
+}
+
+.ct-fade-children-appear {
+    opacity: 0.01;
+}
+
+.ct-fade-children-appear.ct-fade-appear-active {
+    opacity: 1;
+    transition: opacity 150ms ease-in;
+}

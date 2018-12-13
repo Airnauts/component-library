@@ -1,14 +1,35 @@
 @import '../../styles/themify';
+@import '../../styles/themes';
 @import '../../styles/base';
 
-.header {
-  @include themify($themes) {
-    border-bottom: themed('border');
-    width: themed('header-width');
-    height: themed('header-height');
-    margin-bottom: themed('header-bottom');
-  }
+.theme-d3a .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
-  position: relative;
+  align-items: center;
+  width: 100vw;
+  padding: 20px 18px;
+  background-color: #0C3647;
+  z-index: 100;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    display: block;
+    height: 1px;
+    width: calc(100% + 40px);
+    background-color: rgba(#fff, .1);
+  }
+
+  &::after {
+    content: none !important;
+  }
+
+  &-logo {
+    height: 30px;
+  }
 }

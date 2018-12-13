@@ -1,0 +1,89 @@
+@import '../../styles/themify';
+@import '../../styles/variables';
+
+.input-field {
+  &-input-wrapper {
+    position: relative;
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &__input {
+      @include themify($themes) {
+        background: themed('inputBg');
+        color: themed('superLight');
+      }
+
+      display: block;
+      width: 100%;
+      border: 0;
+      font-size: 16px;
+      padding: 9px 15px;
+      transition: .15s;
+
+      &--error {
+        @include themify($themes) {
+          // color: themed('error') !important;
+        }
+      }
+
+      &:focus {
+        @include themify($themes) {
+          color: themed('light');
+        }
+        box-shadow: 4px 4px 0 0 rgba(0,0,0,0.10);
+      }
+    }
+
+    &__suffix {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 15px;
+      display: flex;
+    }
+
+    &__unit {
+      font-size: $medium;
+      opacity: 0.5;
+      @include themify($themes) {
+        color: themed('light');
+      }
+    }
+
+    &__error-icon {
+      height: 20px;
+      width: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        @include themify($themes) {
+          fill: themed('error');
+        }
+      }
+    }
+  }
+
+  &__error-msg {
+    font-size: $medium;
+    @include themify($themes) {
+      color: themed('errorLight');
+    }
+  }
+
+  &--invalid {
+    .label__text {
+      @include themify($themes) {
+        color: themed('errorLight');
+      }
+    }
+  }
+}

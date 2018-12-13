@@ -28,11 +28,8 @@
 }
 
 %headline-title {
-  @include themify($themes) {
-    border-bottom: themed('border');
-  }
-  font-size: $h2;
-  font-weight: $light-weight;
+  font-size: 24px;
+  font-weight: $bold-weight;
   line-height: 1em;
   padding-bottom: 15px;
 }

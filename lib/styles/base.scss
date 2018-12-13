@@ -9,11 +9,13 @@
 
 %base {
   @include themify($themes) {
-    background: themed('bgColor');
+    background-color: themed('bgBaseNew');
     color: themed('textcolor');
     font-family: themed('fontFamily');
   }
 
+  background-color: #0C3647;
+  overflow-x: hidden;
   line-height: $default-lh;
   font-size: $body;
   -webkit-font-smoothing: antialiased;

@@ -39,4 +39,12 @@
   &__button {
     align-self: flex-start;
   }
+
+  &.configuration {
+    .configuration {
+      &__cta {
+        display: flex;
+      }
+    }
+  }
 }

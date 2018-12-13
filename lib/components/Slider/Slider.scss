@@ -1,356 +1,126 @@
 @import '../../styles/themify';
 @import '../../styles/variables';
 
-.rc-slider {
-  position: relative;
-  height: 40px;
-  padding: 5px 0;
+.SliderComp {
   width: 100%;
-  touch-action: none;
+  padding-bottom: 20px;
+  margin-left: auto;
+  user-select: none;
 
-  &-rail {
-    @include themify($themes) {
-      background-color: themed('line');
-    }
-    position: absolute;
+  &__track {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 4px;
-
-    &::before,
-    &::after {
-      @include themify($themes) {
-        background-color: themed('light');
-      }
-      display: block;
-      content: '';
-      height: 14px;
-      width: 2px;
-      position: absolute;
-      top: -5px;
-    }
-
-    &::before {
-      left: 0;
-    }
-
-    &::after {
-      right: 0;
-    }
+    font-size: 13px;
+    background-color: #315563;
   }
 
-  &-track {
-    @include themify($themes) {
-      background-color: themed('secondary');
-    }
-    position: absolute;
-    left: 0;
-    height: 4px;
+  &__label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #8DAEBC;
+    user-select: none;
   }
 
-  &-handle {
-    @include themify($themes) {
-      background-color: themed('secondary');
-    }
-    position: absolute;
-    margin-top: -5px;
-    width: 2px;
-    height: 14px;
+  &__markers {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    user-select: none;
     cursor: pointer;
 
-    &:hover,
-    &:active,
-    &:focus {
-      @include themify($themes) {
-        background-color: themed('primary');
-        box-shadow: themed('formSadow');
-      }
-    }
-
-    &:active {
-      cursor: grabbing;
-    }
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  &-mark {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 100%;
-    font-size: 12px;
-
-    &-text {
-      @include themify($themes) {
-        color: themed('title');
-      }
-      position: absolute;
-      display: inline-block;
-      vertical-align: middle;
-      text-align: center;
-      cursor: pointer;
-    }
-
     .marker {
-      font-style: normal;
+      position: relative;
+      padding-top: 16px;
+      text-align: center;
+      font-size: 10px;
+      color: rgba(#fff, .5);
+
+      &:first-of-type {
+        text-align: left;
+      }
+
+      &:last-of-type {
+        text-align: right;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 100%;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 6px;
+        background-color: rgba(#fff, .1);
+      }
+
+      &--accent {
+        &:first-of-type::before {
+          left: 0;
+          transform: none;
+        }
+
+        &:last-of-type::before {
+          right: 0;
+          left: unset;
+          transform: none;
+        }
+
+        &:last-of-type span {
+          position: absolute;
+          top: calc(100% - 16px);
+          right: 0;
+        }
+
+        &::before {
+          top: -4px;
+          height: 14px;
+        }
+      }
     }
   }
-}
 
-.rc-slider-step {
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background: transparent;
-}
-
-.rc-slider-dot {
-  @include themify($themes) {
-    background-color: themed('line');
-  }
-  bottom: -14px;
-  position: absolute;
-  margin-left: -1px;
-  width: 1px;
-  height: 5px;
-  cursor: pointer;
-  vertical-align: top;
-
-  &:first-child,
-  &:last-child {
-    bottom: -18px;
-    height: 10px;
-  }
-}
-
-.rc-slider-dot-active {
-  @include themify($themes) {
-    background-color: themed('line');
-  }
-}
-
-.rc-slider-disabled {
-  @include themify($themes) {
-    background-color: themed('line');
+  &__bar {
+    position: relative;
+    height: 4px;
+    width: 0;
+    background-color: #327D99;
+    cursor: pointer;
   }
 
-  .rc-slider-track {
-    @include themify($themes) {
-      background-color: themed('white');
-   }
- }
+  &__pole {
+    position: absolute;
+    top: 50%;
+    left: calc(100% - 5px);
+    height: 16px;
+    width: 6px;
+    margin-top: -8px;
+    background-color: #3199C2;
+    cursor: ew-resize;
 
-  .rc-slider-handle,
-  .rc-slider-dot {
-    @include themify($themes) {
-      background-color: themed('white');
-      border-color: themed('line');
+    &--first {
+      left: -1px;
     }
-    box-shadow: none;
-    cursor: not-allowed;
-  }
-}
 
-.rc-slider-vertical {
-  width: 14px;
-  height: 100%;
-  padding: 0 5px;
-
-  .rc-slider-rail {
-    height: 100%;
-    width: 4px;
+    &--hidden {
+      opacity: 0;
+      cursor: default;
+    }
   }
 
-  .rc-slider-track {
-    left: 5px;
-    bottom: 0;
-    width: 4px;
-  }
-
-  .rc-slider-handle {
-    margin-left: -5px;
-    margin-bottom: -7px;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-  }
-
-  .rc-slider-mark {
-    top: 0;
-    left: 18px;
-    height: 100%;
-  }
-
-  .rc-slider-step {
-    height: 100%;
-    width: 4px;
-  }
-
-  .rc-slider-dot {
-    left: 2px;
-    margin-bottom: -4px;
-  }
-}
-
-.rc-slider-tooltip {
-  position: absolute;
-  left: 0;
-  top: 0;
-  visibility: visible;
-}
-
-.rc-slider-tooltip-hidden {
-  display: none;
-}
-
-.rc-slider-tooltip-placement-top {
-  padding: 4px 0 8px;
-
-  .rc-slider-tooltip-arrow {
-    border-top-color: #3a657f;
-    bottom: 4px;
-    left: 50%;
-    margin-left: -4px;
-    border-width: 4px 4px 0;
-  }
-}
-
-// the tooltip markup is placed outside of the theme wrapper - therefore colors have to be hardcoded
-
-.rc-slider-tooltip-inner {
-  background-color: #3a657f;
-  color: #fff;
-  padding: 6px 2px;
-  min-width: 24px;
-  height: 24px;
-  font-size: 12px;
-  line-height: 1;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 6px;
-}
-
-.rc-slider-tooltip-arrow {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-}
-
-.rc-slider-tooltip-zoom-down-enter,
-.rc-slider-tooltip-zoom-down-appear {
-  -webkit-animation-duration: .3s;
-  animation-duration: .3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  display: block;
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-}
-
-.rc-slider-tooltip-zoom-down-leave {
-  -webkit-animation-duration: .3s;
-  animation-duration: .3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  display: block !important;
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-}
-
-.rc-slider-tooltip-zoom-down-enter.rc-slider-tooltip-zoom-down-enter-active,
-.rc-slider-tooltip-zoom-down-appear.rc-slider-tooltip-zoom-down-appear-active {
-  -webkit-animation-name: rcSliderTooltipZoomDownIn;
-  animation-name: rcSliderTooltipZoomDownIn;
-  -webkit-animation-play-state: running;
-  animation-play-state: running;
-}
-
-.rc-slider-tooltip-zoom-down-leave.rc-slider-tooltip-zoom-down-leave-active {
-  -webkit-animation-name: rcSliderTooltipZoomDownOut;
-  animation-name: rcSliderTooltipZoomDownOut;
-  -webkit-animation-play-state: running;
-  animation-play-state: running;
-}
-
-.rc-slider-tooltip-zoom-down-enter,
-.rc-slider-tooltip-zoom-down-appear {
-  -webkit-transform: scale(0, 0);
-  transform: scale(0, 0);
-  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.rc-slider-tooltip-zoom-down-leave {
-  -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-}
-
-@-webkit-keyframes rcSliderTooltipZoomDownIn {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scale(0, 0);
-    transform: scale(0, 0);
-  }
-
-  100% {
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-}
-
-@keyframes rcSliderTooltipZoomDownIn {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scale(0, 0);
-    transform: scale(0, 0);
-  }
-
-  100% {
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-}
-
-@-webkit-keyframes rcSliderTooltipZoomDownOut {
-  0% {
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-
-  100% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scale(0, 0);
-    transform: scale(0, 0);
-  }
-}
-@keyframes rcSliderTooltipZoomDownOut {
-  0% {
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
-
-  100% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scale(0, 0);
-    transform: scale(0, 0);
+  &__error-msg {
+    font-size: $medium;
+    @include themify($themes) {
+      color: themed('errorLight');
+    }
   }
 }
