@@ -89,7 +89,7 @@
     }
 
     svg {
-      width: 100%;
+      width: auto;
       height: 100%;
       @include themify($themes) {
         fill: themed('light');
