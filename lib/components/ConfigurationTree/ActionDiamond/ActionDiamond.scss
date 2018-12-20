@@ -1,0 +1,69 @@
+@import '../../../styles/themify';
+@import '../../../styles/variables';
+
+.node-diamond,
+.action-diamond {
+  transition:
+    all 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.action-diamond {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &-wrapper {
+    margin: 11px;
+  }
+
+  &--unclicked {
+    border-color: rgba(255, 255, 255, 0.098);
+    border-style: solid;
+    border-width: 2px;
+    transform: rotate(45deg);
+
+    &:hover {
+      @include themify($themes) {
+        border-color: themed('actionPrimary');
+      }
+    }
+  }
+
+  &--clicked {
+    @include themify($themes) {
+      background-color: themed('actionSecondary');
+    }
+    transform: rotate(135deg);
+    box-shadow: 7px -7px 0px 0px $box-shadow-color;
+  }
+
+  &__icon {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+    @include themify($themes) {
+      color: themed('actionPrimary');
+    }
+
+    &--unclicked {
+      transform: rotate(-45deg);
+    }
+
+    &--clicked {
+      transform: rotate(-135deg);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

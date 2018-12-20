@@ -1,0 +1,81 @@
+@import '../../styles/themify';
+@import '../../styles/variables';
+
+.side-modal {
+  position: fixed;
+  top: 50%;
+  left: 100vw;
+  z-index: 10;
+  max-height: calc(100vh - 116px);
+  transition: 0.2s;
+  box-shadow: 5px 5px 0px 0px $box-shadow-color;
+  overflow-y: scroll;
+
+  &--visible {
+    transform: translate(calc(-100% - 20px), -50%);
+  }
+
+  &--hidden {
+    transform: translate(0, -50%);
+  }
+
+  &__inner {
+    position: relative;
+    top: -21px;
+    height: 100%;
+    padding: 20px 20px 0 20px;
+    margin-bottom: -21px;
+    background-color: #0C3647;
+    user-select: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.05);
+      pointer-events: none;
+    }
+  }
+
+  &__childrens {
+    padding-bottom: 86px;
+  }
+
+  &__close-button {
+    position: sticky;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    left: calc(100% - 30px);
+    z-index: 1000;
+    cursor: pointer;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      @include themify($themes) {
+        fill: themed('lightBg');
+      }
+    }
+  }
+
+  .node-card {
+    padding-left: 20px;
+  }
+
+  .inner-block__divider {
+    display: block;
+    border-bottom: 1px solid $color-modal-divider;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 30px;
+    color: $color-modal-divider-text;
+
+    &:last-of-type {
+      margin: 20px 0 40px;
+    }
+  }
+}

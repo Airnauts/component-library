@@ -3,40 +3,37 @@
 
 .nativeSelect {
   @include themify($themes) {
-    background: themed('formElement');
+    background: themed('inputBg');
   }
   position: relative;
 
   &__icon {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     right: 5px;
-    height: 25px;
     display: flex;
     justify-content: center;
 
     svg {
       @include themify($themes) {
-        fill: themed('secondary');
+        fill: themed('actionPrimary');
       }
     }
   }
 
   &__select {
     @include themify($themes) {
-      color: themed('light');
+      color: themed('superLight');
     }
     display: block;
     width: 100%;
     background: transparent;
-    font-size: $small;
-
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    font-size: 16px;
     appearance: none;
-
     border: 0;
     border-radius: 2px;
-    padding: 5px 50px 5px 15px;
+    padding: 9px 50px 9px 15px;
     position: relative;
     z-index: 10;
 
@@ -45,31 +42,15 @@
     }
   }
 
-  &:focus,
-  &:hover {
-    @include themify($themes) {
-      box-shadow: themed('formShadow');
-    }
-
-    .nativeSelect__icon {
-      svg {
-        @include themify($themes) {
-          fill: themed('primary');
-        }
-      }
-    }
-  }
-
-
   &--medium {
     .nativeSelect__select {
       padding: 15px 50px 15px 15px;
     }
 
     .nativeSelect__icon {
+      top: 50%;
       right: 15px;
-      height: 45px;
+      transform: translateY(-50%);
     }
-
   }
 }

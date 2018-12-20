@@ -8,7 +8,9 @@ $themes: (
     secondary: #35d7c6, // second highlight
 
     // Background colors
-    bgColor: radial-gradient(#10455c 60%, #00171f),
+    bgColor: radial-gradient(circle at bottom center, rgba(255,255,255,0.50), rgba(0,0,0,0.50)),
+    bgBase: #135671,
+    bgBaseNew: #0C3647,
     cardBg: rgba(0, 0, 0, 0.06),
     darkBg: #043d53,
     lightBg: #3a657f,
@@ -17,16 +19,16 @@ $themes: (
     even: #3a657f,
     line: #7d7d7d,
     black5: rgba(0, 0, 0, 0.05),
+    black10: rgba(0, 0, 0, .1),
     white5: rgba(255, 255, 255, 0.05),
     white10: rgba(255, 255, 255, 0.1),
-
     positive: #5de668,
     negative: #961d46,
     warning: #fde74c,
 
     // Borders
     border: (1px solid #7d7d7d),
-    formBorder: (1px solid rgba(255, 255, 255, 0.15)),
+    formBorder: (1px solid rgba(255, 255, 255, 0.10)),
 
     // Shadows
     boxShadow: (0 10px 15px 0 rgba(0, 0, 0, 0.15)),
@@ -41,6 +43,7 @@ $themes: (
     textSubColor: #8daebc,
     link: #a666ff,
     light: #fff,
+    superLight: rgba(255, 255, 255, .6),
     title: #7d7d7d,
     lightGrayBlue: #d3dee3,
 
@@ -48,6 +51,20 @@ $themes: (
     header-width: 100%,
     header-height: 47px,
     header-bottom: inherit,
+
+    // Configuration Three
+    actionPrimary: #3199C2,
+    actionSecondary: #FFFFFF,
+    nodeColor1: #35D7C6,
+    nodeColor1Active: rgba(53, 215, 198, .4),
+    nodeColor1Inactive: #336c7c,
+    nodeColor2: #A666FF,
+    modalBg: #0f3a4d,
+    inputBg: rgba(50, 125, 153, .2),
+    inputBorder: #327D99,
+    error: #C26161,
+    errorLight: #C26161,
+    label: #8DAEBC,
 ),
   verbund: (
 

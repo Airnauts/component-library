@@ -5,15 +5,31 @@
   @include themify($themes) {
     color: themed('textcolor');
     font-family: themed('fontFamily');
-    font-weight: $thin-weight;
   }
-  display: inline-block;
-  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  height: 36px;
+  padding: 11px 13px;
   border: 0;
   border-radius: 2px;
   cursor: pointer;
-  transition: color .1s, background-color .1s;
+  transition: color .1s, background-color .1s, box-shadow .1s;
   font-size: $small;
+
+  &__icon {
+    fill: $color-white;
+  }
+
+  &-icon {
+    padding: 6px 13px;
+
+    .button__label {
+      margin-right: 30px;
+    }
+  }
 
   &.settings {
     position: absolute;
@@ -99,7 +115,7 @@
 
   &--icon {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     @include themify($themes) {
       background-color: transparent;
@@ -123,6 +139,10 @@
       }
     }
 
+    .button__label {
+      margin-right: 0;
+    }
+
     &:active,
     &:hover {
       @include themify($themes) {
@@ -139,6 +159,34 @@
       .button__label {
         text-decoration: underline;
       }
+    }
+  }
+
+  &--icon-only {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    padding: 5px 0 0 0;
+  }
+
+  &--ghost {
+    @include themify($themes) {
+      background-color: themed('white10');
+
+      &:hover {
+        background-color: themed('white10');
+        box-shadow: 0 4px 0px 1px themed('black10');
+      }
+    }
+  }
+
+  &--accent {
+    background-color: $color-accent;
+
+    &:hover {
+      background-color: lighten($color-accent, 10);
     }
   }
 
