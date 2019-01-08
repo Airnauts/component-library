@@ -50,15 +50,10 @@
       width: calc((100% / 2) - 100px);
       .button {
         padding: 0;
-
-        &__icon {
-          position: relative;
-          left: -2px;
-        }
       }
 
       .user-name {
-        margin-left: 18px;
+        margin-left: 16px;
         font-size: 14px;
         cursor: default;
         color: #8DAEBC;

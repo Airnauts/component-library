@@ -190,6 +190,15 @@
     }
   }
 
+  &--reversed {
+    flex-direction: row-reverse;
+
+    .button__label {
+      margin-right: 0;
+      margin-left: 30px;
+    }
+  }
+
   &--verbund {
     &-primary,
     &-secondary {
